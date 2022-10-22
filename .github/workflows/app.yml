@@ -3,7 +3,7 @@ name: App
 on:
   push:
     tags:
-    - 'v*'
+    - 'master'
 jobs:
   goreleaser:
     name: Build
