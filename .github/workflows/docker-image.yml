@@ -5,17 +5,16 @@ on:
   push:
     branches:
       - master
-
+   
 jobs:
-  build-docker:
+  buildx-dockerhub:
     runs-on: ubuntu-latest
     env:
       DOCKER_REPO: boythejan/ddns-go
-      DOCKER_PLATFORMS: linux/arm,linux/amd
+      DOCKER_PLATFORMS: linux/amd64,linux/arm,linux/arm64
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker buildx
@@ -32,5 +31,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          push: true 
-          tags: boythejan/ddns-go:latest
+          push: true # push to docker hub
+          platforms: ${{ env.DOCKER_PLATFORMS }}
+          tags: |
+            boythejan/ddns-go:latest
+            boythejan/ddns-go:${{ env.VERSION }}
