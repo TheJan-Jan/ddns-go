@@ -3,7 +3,7 @@ name: App
 on:
   push:
     tags:
-    - 'v=4.2'
+    - '1.0'
 jobs:
   goreleaser:
     name: Build
