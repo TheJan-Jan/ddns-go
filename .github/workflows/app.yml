@@ -24,9 +24,10 @@ jobs:
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v3
         with:
-          if: startsWith(github.ref, 'refs/tags/')
           distribution: goreleaser
           version: latest
           args: release --rm-dist
+          workdir: .
+          install-only: false
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
