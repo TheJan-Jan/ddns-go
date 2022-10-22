@@ -1,4 +1,4 @@
-name: Release Docker Image
+name: Docker Image
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
       - master
 
 jobs:
-  buildx-dockerhub:
+  build-docker:
     runs-on: ubuntu-latest
     env:
       DOCKER_REPO: boythejan/ddns-go
