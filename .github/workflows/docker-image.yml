@@ -15,6 +15,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker buildx
@@ -31,8 +32,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          push: true # push to docker hub
-          platforms: linux/arm
-          tags: |
-            boythejan/ddns-go:latest
-            boythejan/ddns-go:1.0
+          push: true 
+          tags: boythejan/ddns-go:latest
