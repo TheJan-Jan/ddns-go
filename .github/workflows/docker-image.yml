@@ -35,4 +35,4 @@ jobs:
           platforms: ${{ env.DOCKER_PLATFORMS }}
           tags: |
             boythejan/ddns-go:latest
-            boythejan/ddns-go:${{ env.VERSION }}
+            boythejan/ddns-go:1.0
