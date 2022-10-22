@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOCKER_REPO: boythejan/ddns-go
-      DOCKER_PLATFORMS: linux/amd64,linux/arm
+      DOCKER_PLATFORMS: linux/arm
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -32,7 +32,7 @@ jobs:
         with:
           context: .
           push: true # push to docker hub
-          platforms: ${{ env.DOCKER_PLATFORMS }}
+          platforms: linux/arm
           tags: |
             boythejan/ddns-go:latest
             boythejan/ddns-go:1.0
