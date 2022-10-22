@@ -5,7 +5,7 @@ name: release
 on:
   push:
     tags:
-    - 'v*4.0'
+    - '4.0'
 jobs:
   goreleaser:
     name: Build
