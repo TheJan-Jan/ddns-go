@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOCKER_REPO: boythejan/ddns-go
-      DOCKER_PLATFORMS: linux/arm
+      DOCKER_PLATFORMS: linux/arm,linux/amd
     steps:
       - name: Checkout
         uses: actions/checkout@v3
