@@ -1,10 +1,12 @@
 name: App
 
+name: release
+
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - master
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v=4.0' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
   goreleaser:
