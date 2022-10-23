@@ -28,7 +28,7 @@ builds:
       - hardfloat
       - softfloat
     ldflags:
-      - -s -w -X main.version={{.Tag}} -X main.buildTime={{.Date}}
+      - -s -w -X main.version=1.0 -X main.buildTime={{.Date}}
 archives:
   - replacements:
       darwin: Darwin
@@ -39,7 +39,7 @@ archives:
 checksum:
   name_template: 'checksums.txt'
 snapshot:
-  name_template: "{{ .Tag }}-next"
+  name_template: "1.0-next"
 changelog:
   sort: asc
   filters:
